@@ -7,6 +7,12 @@ public class P02_Locators {
         1- tag (Etiket) : bir HTML ogesinin baslangic ve sonunu belirler. <x y> arasi veya <xxx>  </xxx> baslangic ve sonu iki sekilde de olabilir
         2- attribute : tag icinde yeralan = oncesi hersey key=value seklinde value ile birlikte kullanilir
         3- attribute value : tag icinde yeralan = sonrası "" arasindaki hersey
+        ***NoSuchElementException locator webelement'i bulamazsa olusur yontem degistirilir***
+        *** findElement            -           findElements farklari;
+            Ilk elemani                        tum elemanlari
+            NoSuchElementException firlatir    Bos Liste dondurur
+            WebElement dondurur                List<WebeElement> dondurur
+            Direk ulasilabilir                 List'den index veya Iterator ile ulasilabilir
 
         İlk Aranacak olan Attributes id 'dir ancak id degisken olabilmekte en fazla kullanacagimiz xpath'dir.
 
@@ -16,7 +22,7 @@ public class P02_Locators {
         2-By name,
         WebElement aramaKutusu = driver.findElement(By.name("field-keywords"));
 
-        3-By classname,(Genelde unique olmaz ve ayni ozellikte pekcok we vardir ve bosluk varsa saglikli calismayabilir)
+        3-By classname,(Genelde unique olmaz ve ayni ozellikte pekcok we vardir Listeye konabilir (bosluk varsa saglikli calismayabilir))
         WebElement aramaKutusu = driver.findElement(By.classname("nav-input nav-progressive-attribute"));
 
         4-By tagName, unique bulmaz genelde a tag'i ile Link (text) sayisi bulmak icin
@@ -29,6 +35,12 @@ public class P02_Locators {
         WebElement aramaKutusu = driver.findElement(By.partiallinkText("esses"));
 
         7-By xpath, %90    // ilk 6 ile bulunamadiysa kullanilir
+        ***Absolute xpath   Relative xpath
+        HTML kodlarda parent-child-sibling(kardes) iliskisi vardir
+        Absolute xpath; sirali bakar ancak kod degisirse ,guncellenirse locator calisamayabilir.
+        //div/table/tbody/tr/td[3]/a/span[5] sirayla gider / varsa direk child'ina bakar
+        //div/table/tbody//tr/td[3]/a/span[5] tbody 'nin Child'lari yada grand Child'lari arasinda tr var mi diye bakar
+        Relative xpath; encok kullanilan xpath'dir
         Format;
         (//tagname[@attributeKey='attributeValue'])[x] ; x=kacinci webelement
         WebElement aramaKutusu = driver.findElement(By.xpath("//input[@type='text']"));

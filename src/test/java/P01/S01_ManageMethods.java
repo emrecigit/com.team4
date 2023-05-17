@@ -1,10 +1,10 @@
-package P00;
+package P01;
 
 import org.junit.Test;
 import org.openqa.selenium.Point;
 import utilities.TestBase;
 
-public class P03 extends TestBase {
+public class S01_ManageMethods extends TestBase {
     @Test
     public void test() throws InterruptedException {
         driver.get("https://www.amazon.com");

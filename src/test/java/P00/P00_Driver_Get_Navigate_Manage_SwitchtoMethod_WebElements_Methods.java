@@ -1,15 +1,15 @@
 package P00;
 
 import org.junit.Test;
+import org.openqa.selenium.*;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
-import org.openqa.selenium.WindowType;
 import utilities.TestBase;
 
 import java.awt.*;
 import java.time.Duration;
 
-public class P00_Driver_Get_Navigate_Manage_SwitchtoMethods extends TestBase {
+public class P00_Driver_Get_Navigate_Manage_SwitchtoMethod_WebElements_Methods extends TestBase {
   @Test
   public void driverGetMethods() throws InterruptedException {
     driver.get("https://amazon.com");                  // url'e goturur
@@ -58,9 +58,48 @@ public class P00_Driver_Get_Navigate_Manage_SwitchtoMethods extends TestBase {
   }
     @Test
     public void driverswitchtoMethods() throws InterruptedException {
+    // driver.switchTo().newWindow() kullanarak actigimiz
+    // window'a driver otomatik olarak gecer
+    // ANCAKKKKK....
+    // biz newWindow() method'unu kullanmadan
+    // bir link tikladigimizda yeni window aciliyorsa
+    // driver eski window'da kalir
+    // Yeni window'a driver'i gecirebilmek icin
+    // yeni window'un WindowHandleDegerine ihtiyacimiz vardir.
       driver.get("https://youtube.com");
+      String youtubeWHV = driver.getWindowHandle();
+      System.out.println(youtubeWHV.toString()); //6BFD97C652E0AD3A7936720BFDB35A05
       Thread.sleep(2000);
-      //driver.switchTo().newWindow(WindowType.valueOf("https://www.amazon.com"));
+      driver.switchTo().newWindow(WindowType.TAB); // yeni sekme
+      // driver.switchTo().newWindow(WindowType.WINDOW); // // yeni pencere
+      driver.navigate().to("https://www.wisequarter.com");
+      Thread.sleep(5000);
+      String wiseWHV = driver.getWindowHandle();
+      System.out.println(wiseWHV.toString()); //EFEA03691147B485E83A111B11F3FFDA
+      driver.switchTo().window(youtubeWHV);
+      driver.switchTo().window(wiseWHV);
+
+      driver.quit();
+    }
+
+    @Test
+    public void webElementMethods() throws InterruptedException {
+    driver.get("https://amazon.com");
+      WebElement aramaKutusuElementi = driver.findElement(By.xpath("//*[@id='twotabsearchtextbox']"));
+      aramaKutusuElementi.click();
       Thread.sleep(2000);
+      aramaKutusuElementi.sendKeys("nutella");
+      Thread.sleep(2000);
+      aramaKutusuElementi.clear();
+      Thread.sleep(2000);
+      aramaKutusuElementi.sendKeys("Nutella"+Keys.ENTER);
+      Thread.sleep(2000);
+      //aramaKutusuElementi.submit(); //Enter yerine kullanilir.
+      System.out.println(aramaKutusuElementi.isEnabled()); // Erisilebilir mi?
+      System.out.println(aramaKutusuElementi.isDisplayed());// Gorunuyor mu
+      System.out.println(aramaKutusuElementi.isSelected()); // Secili mi
+      System.out.println(aramaKutusuElementi.getSize());
+      System.out.println(aramaKutusuElementi.getText());
+
     }
 }

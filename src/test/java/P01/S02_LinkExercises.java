@@ -1,4 +1,4 @@
-package P00;
+package P01;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -8,7 +8,7 @@ import utilities.TestBase;
 
 import java.util.List;
 
-public class P04 extends TestBase {
+public class S02_LinkExercises extends TestBase {
  //   Bir test class’i olusturun ilgili ayarlari yapin
  //   https://www.automationexercise.com/ adresine gidin
  //   Sayfada 147 adet link bulundugunu test edin.
