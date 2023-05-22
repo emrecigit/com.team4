@@ -74,6 +74,13 @@ mysql » mysql-connector-java
     <version>8.0.33</version>
 </dependency>
 ===========================================================================================
+ <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.7.1</version>
+        <scope>test</scope>
+    </dependency>
  */
 
 // <dependencies>

@@ -3,6 +3,7 @@ package P00;
 public class P00_Selenium_Dev {
  //   https://www.selenium.dev/downloads/ adresine gidin
  //   *https://www.maven.apache.org/*
+ //   *https://www.testng.org/*
  //   Selenium Client & WebDriver Language Bindings altinda Java driver'ini download edin
  //   Browsers altinda Chrome documentation linkini tiklayalim
  //   Chrome'un kendi sayfasina gidip Current stable release'i tiklayip size uygun olani download edin

@@ -1,5 +1,6 @@
 package P00;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.Dimension;
@@ -12,6 +13,7 @@ import java.time.Duration;
 public class P00_Driver_Get_Navigate_Manage_SwitchtoMethod_WebElements_Methods extends TestBase {
   @Test
   public void driverGetMethods() throws InterruptedException {
+    // ********Testte karsialstirilacak actual ifadeler herzaman ya driver.get ya webElement methodlari ile alinir*************
     driver.get("https://amazon.com");                  // url'e goturur
     Thread.sleep(2000);                           // 5 sn bekle sonra alttaki koda gec
     driver.navigate().to("https://youtube.com");// Yeni pencere acar
@@ -20,6 +22,7 @@ public class P00_Driver_Get_Navigate_Manage_SwitchtoMethod_WebElements_Methods e
     System.out.println(driver.getPageSource());        //  Sayfanın kaynak kodlarini getirir
     System.out.println(driver.getWindowHandle());      // Acilan pencerenin unique hash kodunu getirir. // DF551F7EF2822B10D69DE15D492E2AB1
     System.out.println(driver.getWindowHandles());      // Acilan pencerelerin unique hash kodlarini getirir. // DF551F7EF2822B10D69DE15D492E2AB1
+// **webElement.getAttribute("Id");                     // web elementin id Attribute'inin value'sini verir
     driver.close();
   }
 
@@ -100,6 +103,7 @@ public class P00_Driver_Get_Navigate_Manage_SwitchtoMethod_WebElements_Methods e
       System.out.println(aramaKutusuElementi.isSelected()); // Secili mi
       System.out.println(aramaKutusuElementi.getSize());
       System.out.println(aramaKutusuElementi.getText());
+      // **webElement.getAttribute("Id");                     // web elementin id Attribute'inin value'sini verir
 
     }
 }
