@@ -4,6 +4,9 @@ import org.openqa.selenium.JavascriptExecutor;
 
 public class Scroll {
     /*
+
+    // Scroll islemi mouse ile kaydrımaya yarar
+
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
     // Sayfayı aşağı kaydırma
         js.executeScript("window.scrollBy(0, 500)"); // 500 piksel aşağı kaydırır
@@ -12,6 +15,7 @@ public class Scroll {
     // Belirli bir elementin görünür olmasını sağlamak için kaydırma
         js.executeScript("arguments[0].scrollIntoView();", user.travellerDashboardPaymentHistoryLinkElementi);
         user.travellerDashboardPaymentHistoryLinkElementi.click();
+
 
 
 
